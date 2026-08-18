@@ -1,0 +1,156 @@
+[
+  {
+    "id": "byd-han-dm",
+    "brand": "比亚迪",
+    "name": "汉 DM-i",
+    "price": 16.98,
+    "energy_type": "混动",
+    "seats": 5,
+    "segment": "轿车",
+    "tags": ["家用", "大空间", "经济", "智能", "新能源"],
+    "specs": {"油耗": "4.2L/100km", "续航": "1210km", "轴距": "2920mm", "马力": "197ps"}
+  },
+  {
+    "id": "byd-song-plus",
+    "brand": "比亚迪",
+    "name": "宋 PLUS DM-i",
+    "price": 12.98,
+    "energy_type": "混动",
+    "seats": 5,
+    "segment": "SUV",
+    "tags": ["家用", "大空间", "经济", "智能", "新能源"],
+    "specs": {"油耗": "4.4L/100km", "续航": "1150km", "轴距": "2765mm", "马力": "184ps"}
+  },
+  {
+    "id": "toyota-camry",
+    "brand": "丰田",
+    "name": "凯美瑞双擎",
+    "price": 17.98,
+    "energy_type": "混动",
+    "seats": 5,
+    "segment": "轿车",
+    "tags": ["家用", "经济", "保值", "舒适"],
+    "specs": {"油耗": "4.8L/100km", "轴距": "2825mm", "马力": "178ps", "保值": "高"}
+  },
+  {
+    "id": "toyota-highlander",
+    "brand": "丰田",
+    "name": "汉兰达",
+    "price": 26.88,
+    "energy_type": "燃油",
+    "seats": 7,
+    "segment": "SUV",
+    "tags": ["家用", "大空间", "安全", "保值", "7座"],
+    "specs": {"油耗": "8.7L/100km", "轴距": "2850mm", "马力": "248ps", "保值": "高", "安全": "T-Pilot"}
+  },
+  {
+    "id": "tesla-model-3",
+    "brand": "特斯拉",
+    "name": "Model 3",
+    "price": 23.19,
+    "energy_type": "纯电",
+    "seats": 5,
+    "segment": "轿车",
+    "tags": ["智能", "运动", "科技", "新能源"],
+    "specs": {"续航": "606km", "加速": "6.1s", "辅助驾驶": "Autopilot", "轴距": "2875mm"}
+  },
+  {
+    "id": "tesla-model-y",
+    "brand": "特斯拉",
+    "name": "Model Y",
+    "price": 24.99,
+    "energy_type": "纯电",
+    "seats": 5,
+    "segment": "SUV",
+    "tags": ["智能", "大空间", "科技", "新能源"],
+    "specs": {"续航": "554km", "辅助驾驶": "Autopilot", "轴距": "2890mm", "后备箱": "854L"}
+  },
+  {
+    "id": "wuling-hongguang-mini",
+    "brand": "五菱",
+    "name": "宏光 MINI EV",
+    "price": 3.28,
+    "energy_type": "纯电",
+    "seats": 4,
+    "segment": "微型车",
+    "tags": ["代步", "经济", "小车", "新能源"],
+    "specs": {"续航": "170km", "车身": "微型"}
+  },
+  {
+    "id": "bmw-3-series",
+    "brand": "宝马",
+    "name": "3 系",
+    "price": 31.98,
+    "energy_type": "燃油",
+    "seats": 5,
+    "segment": "轿车",
+    "tags": ["运动", "操控", "豪华", "商务"],
+    "specs": {"马力": "245ps", "加速": "7.1s", "轴距": "2851mm", "豪华": "高"}
+  },
+  {
+    "id": "benz-glc",
+    "brand": "奔驰",
+    "name": "GLC",
+    "price": 42.78,
+    "energy_type": "燃油",
+    "seats": 5,
+    "segment": "SUV",
+    "tags": ["豪华", "商务", "舒适", "安全"],
+    "specs": {"马力": "258ps", "四驱": "4MATIC", "轴距": "2973mm", "豪华": "高"}
+  },
+  {
+    "id": "greatwall-tank300",
+    "brand": "坦克",
+    "name": "坦克 300",
+    "price": 19.98,
+    "energy_type": "燃油",
+    "seats": 5,
+    "segment": "SUV",
+    "tags": ["越野", "四驱", "通过性", "运动"],
+    "specs": {"马力": "227ps", "四驱": "分时四驱", "接近角": "33°", "通过性": "强"}
+  },
+  {
+    "id": "li-auto-l7",
+    "brand": "理想",
+    "name": "L7",
+    "price": 30.18,
+    "energy_type": "混动",
+    "seats": 5,
+    "segment": "SUV",
+    "tags": ["家用", "大空间", "智能", "舒适", "新能源"],
+    "specs": {"续航": "1315km", "轴距": "3005mm", "辅助驾驶": "AD Pro", "后备箱": "570L"}
+  },
+  {
+    "id": "xiaopeng-p7",
+    "brand": "小鹏",
+    "name": "P7",
+    "price": 22.39,
+    "energy_type": "纯电",
+    "seats": 5,
+    "segment": "轿车",
+    "tags": ["智能", "运动", "科技", "新能源"],
+    "specs": {"续航": "550km", "加速": "6.7s", "辅助驾驶": "XNGP", "轴距": "2998mm"}
+  },
+  {
+    "id": "geely-星越l",
+    "brand": "吉利",
+    "name": "星越 L",
+    "price": 13.72,
+    "energy_type": "燃油",
+    "seats": 5,
+    "segment": "SUV",
+    "tags": ["家用", "大空间", "科技", "经济"],
+    "specs": {"马力": "238ps", "轴距": "2845mm", "油耗": "7.3L/100km"}
+  },
+  {
+    "id": "buick-gl8",
+    "brand": "别克",
+    "name": "GL8 陆尊",
+    "price": 23.29,
+    "energy_type": "燃油",
+    "seats": 7,
+    "segment": "MPV",
+    "tags": ["商务", "大空间", "舒适", "7座"],
+    "specs": {"马力": "237ps", "轴距": "3088mm", "商务": "高", "舒适": "航空座椅"}
+  }
+]
