@@ -9,7 +9,7 @@ Car Recommender AI 是一个智能购车推荐系统，旨在帮助那些有购�
 - 可选 LLM 增强：接入 OpenAI 兼容接口，生成更自然的个性化推荐说明
 - RESTful API：`POST /api/recommend` 提交问卷即返回推荐结果
 - 内置车型样本数据（`app/data/cars.json`），可随时扩充
-- 响应式问卷前端页面：访问首页即可填问卷、看推荐结果
+- Vue3 + Three.js 前端：首页白色透明粒子汽车（鼠标靠近粒子打散、离开恢复），分步引导式问卷（每步一题 + 过渡特效）
 
 ## 项目结构
 
@@ -26,12 +26,20 @@ car-recommender-ai/
 │   │   └── llm.py              # 可选 LLM 增强
 │   ├── routers/
 │   │   └── recommend.py        # API 路由
-│   ├── static/                 # 问卷前端（HTML/CSS/JS）
-│   │   ├── index.html
-│   │   ├── css/style.css
-│   │   └── js/app.js
 │   └── data/
 │       └── cars.json           # 车型样本库
+├── frontend/                   # Vue3 + Vite 前端（pnpm 管理）
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── HeroCar.vue         # Three.js 粒子汽车
+│   │   │   ├── QuestionnaireSteps.vue  # 分步引导问卷
+│   │   │   └── ResultsView.vue     # 推荐结果展示
+│   │   ├── api.js
+│   │   ├── App.vue
+│   │   └── main.js
+│   ├── package.json
+│   ├── pnpm-lock.yaml          # 依赖锁定文件
+│   └── vite.config.js          # 开发代理 /api → 8000
 ├── tests/                      # pytest 单元测试
 ├── pyproject.toml              # 项目定义与依赖（uv 使用）
 ├── uv.lock                     # 依赖锁定文件（勿手动编辑）
@@ -68,7 +76,28 @@ uv run uvicorn app.main:app --reload
 - 打开 http://127.0.0.1:8000 使用问卷前端页面
 - 打开 http://127.0.0.1:8000/docs 查看交互式 API 文档
 
-### 4. 调用推荐接口
+### 4. 启动前端（开发模式）
+
+前端使用 [pnpm](https://pnpm.io/) 管理依赖（首次先 `npm i -g pnpm`）：
+
+```bash
+cd frontend
+pnpm install      # 安装依赖（首次）
+pnpm dev          # 启动 Vite 开发服务器
+```
+
+Vite 开发服务器默认 http://localhost:5173，已配置 `/api` 代理到后端 8000，可直接开发调试。
+
+### 5. 前端构建（生产模式）
+
+```bash
+cd frontend
+pnpm build        # 输出到 frontend/dist
+```
+
+构建后重新启动后端，FastAPI 会自动托管 `frontend/dist`（访问 http://127.0.0.1:8000 即生产版前端）。
+
+### 6. 调用推荐接口
 
 ```bash
 curl -X POST http://127.0.0.1:8000/api/recommend \
@@ -76,7 +105,7 @@ curl -X POST http://127.0.0.1:8000/api/recommend \
   -d '{"budget_min":10,"budget_max":20,"energy_type":["混动"],"purpose":"家庭用车","seats":5,"priority":"空间"}'
 ```
 
-### 5. 运行测试
+### 7. 运行测试
 
 ```bash
 uv run pytest

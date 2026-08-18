@@ -7,7 +7,6 @@ from functools import lru_cache
 from pathlib import Path
 
 from fastapi import FastAPI
-from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from app.config import settings
@@ -15,7 +14,8 @@ from app.models.recommendation import Car
 
 app = FastAPI(title=settings.app_name, version="0.1.0")
 
-STATIC_DIR = Path(__file__).resolve().parent / "static"
+# Vue 前端构建产物目录（frontend/dist），存在时由后端托管
+FRONTEND_DIST = Path(__file__).resolve().parent.parent / "frontend" / "dist"
 
 
 @lru_cache
@@ -37,11 +37,11 @@ from app.routers.recommend import router as recommend_router  # noqa: E402
 
 app.include_router(recommend_router)
 
-# 静态资源与首页
-app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
-
-
-@app.get("/", include_in_schema=False)
-async def index() -> FileResponse:
-    """返回问卷前端页面。"""
-    return FileResponse(STATIC_DIR / "index.html")
+# 生产模式：托管 Vue 构建产物（需先执行 npm run build）
+# 注意：/api 与 /health 路由须在其之前注册，此处 mount 会接管其余所有请求
+if FRONTEND_DIST.exists():
+    app.mount(
+        "/",
+        StaticFiles(directory=FRONTEND_DIST, html=True),
+        name="frontend",
+    )

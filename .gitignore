@@ -12,6 +12,10 @@ build/
 venv/
 env/
 
+# 前端依赖与构建产物
+node_modules/
+frontend/dist/
+
 # 环境变量（含密钥，不要提交）
 .env
 
